@@ -5,11 +5,11 @@ public class Time implements Comparable<Time>{
 	private int minutes;
 	private String meridian;
 	
-	public Time(int hours, int minutes, String meridian) throws InvalidTimeException215{
+	public Time(int hours, int minutes, String meridian) throws InvalidTimeException{
 		this(String.format("%02d:%02d %s", hours, minutes, meridian));
 } 
 	
-	public Time(String x) throws InvalidTimeException215 {
+	public Time(String x) throws InvalidTimeException {
 		/* Array Index:
 		 * [0] = hours
 		 * [1] = minutes
@@ -34,14 +34,14 @@ public class Time implements Comparable<Time>{
 					this.minutes = minutes;
 					this.meridian = meridian;
 				} else {	
-					throw new InvalidTimeException215(x);
+					throw new InvalidTimeException(x);
 				}
 			} else {	
-				throw new InvalidTimeException215(x);
+				throw new InvalidTimeException(x);
 			}
 		}
 		catch (NumberFormatException ex) {
-			throw new InvalidTimeException215(x);
+			throw new InvalidTimeException(x);
 		}	
 	}
 	
